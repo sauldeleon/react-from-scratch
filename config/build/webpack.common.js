@@ -1,10 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import path from 'path'
-import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-export const ROOT_PATH = path.join(__dirname, '../..')
+export const ROOT_PATH = new URL('../..', import.meta.url).pathname
 
 export default {
   entry: `${ROOT_PATH}/src/index.tsx`,
