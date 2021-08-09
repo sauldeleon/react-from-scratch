@@ -16,7 +16,7 @@ export default ({ env = 'production' }) => {
       rules: [
         {
           test: /\.(png|jpe?g|gif)$/i,
-          loader: 'file-loader',
+          type: 'asset',
         },
         {
           test: /\.svg$/,
