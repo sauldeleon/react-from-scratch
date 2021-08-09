@@ -1,6 +1,12 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ReactRefreshTypescript from 'react-refresh-typescript'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const ROOT_PATH = path.join(__dirname, '../..')
 
 export default ({ env = 'production' }) => {
   return {
@@ -11,7 +17,7 @@ export default ({ env = 'production' }) => {
         port: 5000,
       },
     }),
-    entry: './src/index.tsx',
+    entry: `${ROOT_PATH}/src/index.tsx`,
     module: {
       rules: [
         {
@@ -27,7 +33,7 @@ export default ({ env = 'production' }) => {
           use: {
             loader: 'ts-loader',
             options: {
-              configFile: 'config/typescript/tsconfig.json',
+              configFile: `${ROOT_PATH}/config/typescript/tsconfig.json`,
               getCustomTransformers: () => ({
                 before: env === 'development' ? [ReactRefreshTypescript()] : [],
               }),
@@ -56,13 +62,13 @@ export default ({ env = 'production' }) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './public/index.html',
+        template: `${ROOT_PATH}/public/index.html`,
       }),
       env === 'development' && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
     output: {
       filename: 'main.js',
-      path: new URL('./dist', import.meta.url).pathname,
+      path: `${ROOT_PATH}/dist`,
     },
   }
 }
