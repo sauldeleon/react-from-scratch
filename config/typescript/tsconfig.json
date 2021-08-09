@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist/",
+    "outDir": "dist",
     "noImplicitAny": true,
     "module": "esnext",
     "target": "es6",
@@ -11,7 +11,9 @@
     "moduleResolution": "node",
     "strict": true,
     "lib": ["esnext", "dom"],
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "esModuleInterop": true
-  }
+  },
+  "include": ["../../src/**/*"],
+  "exclude": ["../../src/types/**/*", "../../src/test/**/*.test.*"],
 }
