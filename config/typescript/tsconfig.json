@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "../..",
     "allowSyntheticDefaultImports": true,
     "outDir": "dist",
     "noImplicitAny": true,
@@ -11,9 +12,8 @@
     "moduleResolution": "node",
     "strict": true,
     "lib": ["esnext", "dom"],
-    "typeRoots": ["node_modules/@types", "src/types"],
+    "typeRoots": ["../../node_modules/@types", "../../src/types"],
     "esModuleInterop": true
   },
-  "include": ["../../src/**/*"],
-  "exclude": ["../../src/types/**/*", "../../src/test/**/*.test.*"],
+  "include": ["../../src/**/*"]
 }

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "webpack serve -c config/build/webpack.config.js --env env=development",
-    "build": "webpack",
+    "build": "webpack -c config/build/webpack.config.js",
     "test": "jest -c ./config/test/jest.config.js",
     "test:ci": "yarn test --silent --ci=true --coverage --coverageReporters=cobertura --coverageReporters=lcov --maxWorkers=4",
     "lint": "eslint ./src -c config/linter/.eslintrc --fix"
