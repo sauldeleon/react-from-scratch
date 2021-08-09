@@ -8,6 +8,7 @@ export default ({ env = 'production' }) => {
     ...(env === 'development' && {
       devServer: {
         hot: true,
+        port: 5000,
       },
     }),
     entry: './src/index.tsx',
