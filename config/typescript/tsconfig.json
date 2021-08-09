@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "../..",
     "allowSyntheticDefaultImports": true,
-    "outDir": "dist",
     "noImplicitAny": true,
     "module": "esnext",
     "target": "es6",
