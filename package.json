@@ -9,7 +9,7 @@
     "build": "webpack",
     "test": "jest",
     "test:ci": "yarn test --silent --ci=true --coverage --coverageReporters=cobertura --coverageReporters=lcov --maxWorkers=4",
-    "lint": "eslint ./src --fix"
+    "lint": "eslint ./src -c config/linter/.eslintrc --fix"
   },
   "keywords": [],
   "author": "",
