@@ -27,6 +27,7 @@ export default ({ env = 'production' }) => {
           use: {
             loader: 'ts-loader',
             options: {
+              configFile: 'config/typescript/tsconfig.json',
               getCustomTransformers: () => ({
                 before: env === 'development' ? [ReactRefreshTypescript()] : [],
               }),
